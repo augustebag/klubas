@@ -69,7 +69,7 @@
             <td>{{$member->live}}</td>
             <td>{{$member->experience}}</td>
             <td>{{$member->registered}}</td>
-            <td>{{$member->memberReservoir->title}}</td>
+            {{-- <td>{{$member->memberReservoir->title}}</td> --}}
             <td class="list-container__buttons">
               <form method="POST" action="{{route('member.destroy', [$member])}}">
                 @csrf
