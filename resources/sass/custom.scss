@@ -1,0 +1,73 @@
+body {
+    background-color:#343a40;
+}
+
+.card {
+    background-color: #77e2a5;
+    border: none;
+}
+.card-header {
+    background-color: #ffffff63;
+    .row {
+        display: inline-flex;
+        margin-left: 70px;
+    } form {
+        margin: 20px;
+    }
+    legend {
+        font-size: 17px;
+    }
+    label {
+        font-size: 13px;
+    }
+}
+
+.search {
+    top: 355px;
+    left: 575px;
+    height: 30px;
+    margin-bottom: 1px;
+}
+.filter {
+    margin-top: 4px;
+}
+
+.reservoir_id {
+    border: none;
+    top: 355px;
+    height: 27px;
+}
+
+h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #343a40;
+    font-style: italic;
+    font-size: 35px;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+
+.list-container__photo {
+    width: 50px;
+        height: auto;
+    img {
+        width: 50px;
+        height: auto;
+    }
+}
+
+legend {
+    font-size: 10px;
+}
+
+.sort {
+    font-size: 10px;
+    color:honeydew;
+}
+
+.small-photo {
+    img {
+        width: 80px;
+        height: auto;
+    }
+}
