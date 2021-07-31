@@ -18,10 +18,6 @@
             <label> Live</label>
             <small class="form-text text-muted"> {{$member->live}}</small>
           </div>
-          <div class="form-group">
-            <label> About</label>
-            <small class="form-text text-muted"> {{$member->about}}</small>
-          </div>
           <a href="{{route('member.edit',[$member])}}" class="btn btn-outline-dark btn-sm">Edit</a>
           <a href="{{route('member.pdf',[$member])}}" class="btn btn-outline-dark btn-sm">PDF</a>
         </div>

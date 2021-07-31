@@ -38,12 +38,6 @@
                 <input type="text" class="form-control" name="member_registered" value="{{old('member_registered', $member->registered)}}">
                 <small class="form-text text-muted">Registered.</small>
               </div>
-
-              <div class="form-group">
-                <label>About:</label>
-                <textarea type="text" class="form-control" name="member_about" id="summernote" value="{{old('member_about', $member->about)}}"></textarea>
-                <small class="form-text text-muted">About.</small>
-              </div>
   
 
             <select name="reservoir_id">

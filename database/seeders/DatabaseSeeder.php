@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
                 'title' => $title[rand(0, count($title) -1)], 
                 'area' => rand(10, 50),
                 'photo' => rand(0, 2) ? $faker->imageUrl(200, 300) : null,
-                'about' => $faker->realText(300, 5),
+                'about' => $faker->realText(300, 5)
             ]);
         }
 

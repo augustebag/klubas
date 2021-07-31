@@ -10,10 +10,10 @@ use PDF;
 
 class MemberController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     
     /**
      * Display a listing of the resource.
@@ -101,7 +101,6 @@ class MemberController extends Controller
            'member_live' => ['required', 'min:3', 'max:64', 'alpha'],
            'member_experience' => ['required', 'min:1', 'numeric'],
            'member_registered' => ['required', 'min:1', 'max:64', 'numeric'],
-           'member_about' => ['required', 'min:1'],
        ]
        );
        if ($validator->fails()) {
@@ -115,7 +114,6 @@ class MemberController extends Controller
         $member->live = $request->member_live;
         $member->experience = $request->member_experience;
         $member->registered = $request->member_registered;
-        $member->about = $request->member_about;
         $member->reservoir_id = $request->reservoir_id;
         $member->save();
         return redirect()->route('member.index')->with('success_message', 'Sekmingai įrašytas.');
@@ -162,7 +160,6 @@ class MemberController extends Controller
         'member_live' => ['required', 'min:3', 'max:64', 'alpha'],
         'member_experience' => ['required', 'min:1', 'numeric'],
         'member_registered' => ['required', 'min:1', 'max:64', 'numeric'],
-        'member_about' => ['required', 'min:1'],
        ],
 
        );
@@ -177,7 +174,6 @@ class MemberController extends Controller
        $member->live = $request->member_live;
        $member->experience = $request->member_experience;
        $member->registered = $request->member_registered;
-       $member->about = $request->member_about;
        $member->reservoir_id = $request->reservoir_id;
        $member->save();
        return redirect()->route('member.index')->with('success_message', 'Sekmingai įrašytas.');

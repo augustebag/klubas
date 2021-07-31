@@ -9,10 +9,7 @@
 </head>
 
 <body>
-  <h1> Reservoir: {{$member->memberReservoir->title}} </h1>
-  <div class="form-group">
-    <small class="form-text text-muted"> Name: {{$member->title}}</small>
-  </div>
+  <h1> Reservoir: {{$member->reservoirOfMember->title}} </h1>
   <div class="form-group">
     <label>Name: </label>
     <small class="form-text text-muted"> {{$member->name}}</small>
@@ -24,10 +21,6 @@
   <div class="form-group">
     <label> Live: </label>
     <small class="form-text text-muted"> {{$member->live}}</small>
-  </div>
-  <div class="form-group">
-    <label> About: </label>
-    <small class="form-text text-muted"> {{$member->about}}</small>
   </div>
 </body>
 
