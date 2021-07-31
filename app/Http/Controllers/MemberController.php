@@ -81,7 +81,7 @@ class MemberController extends Controller
      */
     public function create()
     {
-        $reservoirs = Reservoir::orderBy('name')->paginate(15)->withQueryString();
+        $reservoirs = Reservoir::orderBy('title')->paginate(15)->withQueryString();
        return view('member.create', ['reservoirs' => $reservoirs]);
 
     }
