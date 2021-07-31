@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Member extends Model
 {
     use HasFactory;
+    public function reservoirOfMember()
+    {
+        return $this->belongsTo('App\Models\Reservoir', 'reservoir_id', 'id');
+    }
 }

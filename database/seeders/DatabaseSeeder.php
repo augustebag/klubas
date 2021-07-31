@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
                 'live' => $live[rand(0, count($live) -1)],
                 'experience' => rand(1, 100000),
                 'registered' => rand(1, 100000),
-                'reservoir_id' => rand(1, 20), 
+                'reservoir_id' => rand(1, 20) 
             ]);
         }
     }

@@ -44,7 +44,7 @@
 
             <select name="reservoir_id">
               @foreach ($reservoirs as $reservoir)
-              <option value="{{$reservoir->id}}">{{$reservoir->name}}</option>
+              <option value="{{$reservoir->id}}">{{$reservoir->title}}</option>
               @endforeach
             </select>
             @csrf

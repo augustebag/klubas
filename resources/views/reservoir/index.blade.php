@@ -74,4 +74,4 @@
   </div>
 </div>
 @endsection
-@section('title') Reservoir @endsection
+{{-- @section('title') Reservoir @endsection --}}

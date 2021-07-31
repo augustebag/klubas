@@ -101,7 +101,7 @@ class MemberController extends Controller
            'member_live' => ['required', 'min:3', 'max:64', 'alpha'],
            'member_experience' => ['required', 'min:1', 'numeric'],
            'member_registered' => ['required', 'min:1', 'max:64', 'numeric'],
-           'member_about' => ['required', 'min:1', 'alpha'],
+           'member_about' => ['required', 'min:1'],
        ]
        );
        if ($validator->fails()) {
@@ -162,7 +162,7 @@ class MemberController extends Controller
         'member_live' => ['required', 'min:3', 'max:64', 'alpha'],
         'member_experience' => ['required', 'min:1', 'numeric'],
         'member_registered' => ['required', 'min:1', 'max:64', 'numeric'],
-        'member_about' => ['required', 'min:1', 'alpha'],
+        'member_about' => ['required', 'min:1'],
        ],
 
        );

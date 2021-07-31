@@ -227,7 +227,7 @@ class ReservoirController extends Controller
             }
         }
 
-        if ($reservoir->reservoirHasMember->count()) {
+        if ($reservoir->reservoirHasMembers->count()) {
              return redirect()->back()->with('info_message', 'Trinti negalima, nes turi nebaigtu darbu');
          }
         //  ReservoirMembers
