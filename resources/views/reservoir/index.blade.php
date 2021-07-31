@@ -47,7 +47,7 @@
         <tbody>
           @foreach ($reservoirs as $reservoir)
           <tr>
-            <td class="list-container__photo" {{$reservoir->photo}}>
+            <td class="list-container__photo">
               @if($reservoir->photo)
               <img src="{{$reservoir->photo}}">
               @else

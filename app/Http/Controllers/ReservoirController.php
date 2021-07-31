@@ -14,7 +14,7 @@ class ReservoirController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -182,8 +182,7 @@ class ReservoirController extends Controller
                 unlink($path);
             }
         }
-    }
-
+        
         $photo = $request->file('reservoir_photo');
         $imageName = 
         $request->reservoir_title. '-' .
@@ -194,6 +193,7 @@ class ReservoirController extends Controller
         $url = asset('/reservoirs-img/'.$imageName); // url narsyklei (isorinis)
         $photo->move($path, $imageName); // is serverio tmp ===> i public folderi
         $reservoir->photo = $url;
+    }
     
 
         $validator = Validator::make($request->all(),
@@ -223,6 +223,10 @@ class ReservoirController extends Controller
      */
     public function destroy(Reservoir $reservoir)
     {
+        if ($reservoir->reservoirHasMembers->count()) {
+             return redirect()->back()->with('info_message', 'Trinti negalima, nes turi nebaigtu darbu');
+         }
+         
         if ($reservoir->photo) {
             $imageName = explode('/', $reservoir->photo);
             $imageName = array_pop($imageName);
@@ -232,10 +236,7 @@ class ReservoirController extends Controller
             }
         }
 
-        if ($reservoir->reservoirHasMembers->count()) {
-             return redirect()->back()->with('info_message', 'Trinti negalima, nes turi nebaigtu darbu');
-         }
-        //  ReservoirMembers
+
          $reservoir->delete();
          return redirect()->route('reservoir.index')->with('success_message', 'Sekmingai ištrintas.');
 
