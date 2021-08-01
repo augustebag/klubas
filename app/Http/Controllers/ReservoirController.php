@@ -47,7 +47,7 @@ class ReservoirController extends Controller
         }  elseif ($request->reservoir_id) {
             $reservoirs = Reservoir::where('reservoir_id', (int)$request->reservoir_id)->paginate(15)->withQueryString();
             $defaultReservoir = (int)$request->reservoir_id;
-        } 
+        }
         
         elseif ($request->s) {
             $reservoirs = Reservoir::where('title', 'like', '%'.$request->s.'%')->paginate(15)->withQueryString();
@@ -80,6 +80,7 @@ class ReservoirController extends Controller
      */
     public function create()
     {
+        $reservoirs = Reservoir::orderBy('title')->paginate(15)->withQueryString();
         return view('reservoir.create');
     }
 

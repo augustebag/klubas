@@ -22,18 +22,21 @@
               <button type="submit" class="btn btn-sm btn-outline-dark">Sort</button>
               <a href="{{route('member.index')}}" class="btn btn-outline-danger btn-sm">Clear</a>
             </form>
-            <form action="{{route('member.index')}}" method="get" class="sort-form">
+            <form action="{{route('member.index')}}" method="get">
               <fieldset>
                 <legend>Filter by: </legend>
-                <select class="reservoir_id" class="form-control">
-                  @foreach($reservoirs as $reservoir)
+                <div>
+                  <select name="reservoir_id" class="form-control">
+                    @foreach($reservoirs as $reservoir)
                   <option value="{{$reservoir->id}}" @if($defaultReservoir == $reservoir->id) selected @endif>
-                    {{$reservoir->name}}
+                    {{$reservoir->title}}
                   </option>
                   @endforeach
-                </select><br>
+                  </select>
+                </div>
               </fieldset>
-                <button type="submit" class="btn btn-sm btn-outline-dark filter">Submit</button>
+              <button type="submit" class="btn btn-sm btn-outline-dark">Filter</button>
+              <a href="{{route('member.index')}}" class="btn btn-outline-danger btn-sm">Clear</a>
             </form>
             <form action="{{route('member.index')}}" method="get" class="sort-form">
               <fieldset>
