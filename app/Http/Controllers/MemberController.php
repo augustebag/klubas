@@ -22,7 +22,6 @@ class MemberController extends Controller
      */
     public function index(Request $request)
     {       
-        // $members = Member::all();
         
         $sort = 'name';
         $defaultReservoir = 0;
@@ -100,7 +99,7 @@ class MemberController extends Controller
            'member_surname' => ['required', 'min:3', 'max:64', 'alpha'],
            'member_live' => ['required', 'min:3', 'max:64', 'alpha'],
            'member_experience' => ['required', 'min:1', 'numeric'],
-           'member_registered' => ['required', 'min:1', 'max:64', 'numeric'],
+           'member_registered' => ['required', 'min:1', 'max:64', 'numeric', 'lte:'.$request->member_experience],
        ]
        );
        if ($validator->fails()) {
@@ -159,7 +158,7 @@ class MemberController extends Controller
         'member_surname' => ['required', 'min:3', 'max:64', 'alpha'],
         'member_live' => ['required', 'min:3', 'max:64', 'alpha'],
         'member_experience' => ['required', 'min:1', 'numeric'],
-        'member_registered' => ['required', 'min:1', 'max:64', 'numeric'],
+        'member_registered' => ['required', 'min:1', 'max:64', 'numeric', 'lte:'.$request->member_experience],
        ],
 
        );
