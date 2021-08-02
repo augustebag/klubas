@@ -25,7 +25,7 @@ class MemberController extends Controller
         
         $sort = 'name';
         $defaultReservoir = 0;
-        $reservoirs = Reservoir::all();
+        $reservoirs = Reservoir::orderBy('title')->get();
         $s = '';
         
         if ($request->sort_by) {
@@ -80,7 +80,7 @@ class MemberController extends Controller
      */
     public function create()
     {
-        $reservoirs = Reservoir::orderBy('title')->paginate(15)->withQueryString();
+        $reservoirs = Reservoir::orderBy('title')->get();
        return view('member.create', ['reservoirs' => $reservoirs]);
 
     }
