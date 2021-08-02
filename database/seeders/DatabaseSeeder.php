@@ -30,11 +30,11 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('123'),
         ]);
 
-        $title = ['Pirmas', 'Antras', 'Trecias', 'Ketvirtas', 'Penktas', 'Sestas', 'Septintas'];
+        // $title = ['Pirmas', 'Antras', 'Trecias', 'Ketvirtas', 'Penktas', 'Sestas', 'Septintas'];
         foreach(range(1, 100) as $_) {
 
             DB::table('reservoirs')->insert([
-                'title' => $title[rand(0, count($title) -1)], 
+                'title' =>  $faker->company, 
                 'area' => rand(10, 50),
                 'photo' => rand(0, 2) ? $faker->imageUrl(200, 300) : null,
                 'about' => $faker->realText(300, 5)

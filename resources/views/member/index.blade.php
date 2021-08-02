@@ -25,8 +25,8 @@
             <form action="{{route('member.index')}}" method="get">
               <fieldset>
                 <legend>Filter by: </legend>
-                <div>
-                  <select name="reservoir_id" class="form-control">
+                <div class="filter">
+                  <select name="reservoir_id" class="form-control fil">
                     @foreach($reservoirs as $reservoir)
                   <option value="{{$reservoir->id}}" @if($defaultReservoir == $reservoir->id) selected @endif>
                     {{$reservoir->title}}

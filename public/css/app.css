@@ -10036,13 +10036,14 @@ body {
 }
 
 .filter {
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
-.reservoir_id {
+.fil {
   border: none;
   top: 355px;
   height: 27px;
+  margin-bottom: 2px;
 }
 
 h2 {
